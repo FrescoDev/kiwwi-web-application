@@ -2,8 +2,6 @@
 
 This repo goes along with the [tutorial at SitePoint]() and shows how to create a React + Redux app that calls an API and authenticates users with Auth0.
 
-![single jedi](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/06/1464890085redux-auth-7.png)
-
 ## Installation and Running the App
 
 The app has a server directory that has an Express API for serving up Jedi data.
