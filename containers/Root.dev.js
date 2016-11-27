@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import { Router } from 'react-router'
 import { Route } from 'react-router'
 import { clearError } from '../actions'
-
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import App from './App'
 import Home from '../components/Home'
 import Login from './Login'
@@ -48,6 +48,7 @@ export default class Root extends Component {
     const { store, history } = this.props
     return (
       <Provider store={store}>
+      <MuiThemeProvider>
         <div>
           <Router history={history}>
             <Route component={App}>
@@ -62,6 +63,7 @@ export default class Root extends Component {
          </Router>
          <DevTools />
         </div>
+        </MuiThemeProvider>
       </Provider>
     )
   }
