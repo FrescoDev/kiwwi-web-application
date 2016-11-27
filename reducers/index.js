@@ -8,7 +8,8 @@ import {
     SET_AUTH,
     SENDING_REQUEST,
     REQUEST_ERROR,
-    CLEAR_ERROR
+    CLEAR_ERROR,
+    TOGGLE_LOGIN
 } from '../actions/constants'
 import auth from '../utilities/authenticationHelpers'
 
@@ -20,6 +21,7 @@ let initialState = {
     },
     error: '',
     currentlySending: false,
+    displayLoginPanel: false,
     loggedIn: auth.loggedIn()
 }
 
@@ -36,6 +38,8 @@ function reducer(state = initialState, action) {
             return {...state, error: action.error }
         case CLEAR_ERROR:
             return {...state, error: '' }
+        case TOGGLE_LOGIN:
+            return {...state, displayLoginPanel: true }
         default:
             return state
     }

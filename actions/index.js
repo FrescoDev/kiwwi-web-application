@@ -11,7 +11,8 @@ import {
     REGISTER_REQUEST,
     LOGOUT,
     REQUEST_ERROR,
-    CLEAR_ERROR
+    CLEAR_ERROR,
+    TOGGLE_LOGIN
 } from './constants'
 
 /**
@@ -80,4 +81,11 @@ export function requestError(error) {
  */
 export function clearError() {
     return { type: CLEAR_ERROR }
+}
+
+/**
+ * Toggles login panel
+ */
+export function toggleLogin() {
+    return { type: TOGGLE_LOGIN }
 }
