@@ -104,7 +104,8 @@ class Nav extends Component {
           iconElementLeft={ <Logged />}
           iconElementRight={<Login onTouchTap={this._handleOpen} className='login'/>}
         />
-         <Dialog
+         <Dialog 
+          contentStyle={{ width: 300 }}
           title="Login"
           actions={actions}
           modal={false}
