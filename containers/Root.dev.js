@@ -8,8 +8,6 @@ import { clearError } from '../actions'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import App from './App'
 import Home from '../components/Home'
-import Login from './Login'
-import Register from './Register'
 import Dashboard from '../components/Dashboard'
 import NotFound from '../components/shared/NotFound'
 import DevTools from './DevTools'
@@ -54,8 +52,6 @@ export default class Root extends Component {
             <Route component={App}>
               <Route path='/' component={Home} />
               <Route onEnter={checkAuth}>
-                <Route path='/login' component={Login} />
-                <Route path='/register' component={Register} />
                 <Route path='/dashboard' component={Dashboard} />
               </Route>
             <Route path='*' component={NotFound} />

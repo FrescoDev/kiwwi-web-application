@@ -1,64 +1,13 @@
-import React, {Component} from 'react'
-import LoadingButton from '../../components/shared/LoadingButton'
-import {Link} from 'react-router'
-import {logout, clearError, toggleLogin} from '../../actions'
+import React, {Component} from 'react';
+import {Link} from 'react-router';
+import {logout, clearError, toggleLogin} from '../../actions';
+import LoadingButton from '../../components/shared/LoadingButton';
+import LoginForm from '../../components/Navbar/LoginModal/LoginForm';
+import LoginButton from '../../components/Navbar/LoginButton';
+import Menu from '../../components/Navbar/Menu';
 import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
-import IconMenu from 'material-ui/IconMenu';
-import Toggle from 'material-ui/Toggle';
-import MenuItem from 'material-ui/MenuItem';
-import FlatButton from 'material-ui/FlatButton';
-import MoreHorizIcon from 'material-ui/svg-icons/navigation/more-horiz';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import Dialog from 'material-ui/Dialog';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
-
-const TextFieldExampleSimple = () => (
-  <div>
-    <TextField
-      hintText="Username"
-      floatingLabelText="Username"
-    /><br />
-    <TextField
-      hintText="Password"
-      floatingLabelText="Password"
-      type="password"
-    />
-  </div>
-);
-
-class Login extends Component {
-
-  constructor(props)
-  {
-    super(props);
-    this.muiName = 'FlatButton';
-  }
-
-  render() {
-    return (
-      <FlatButton {...this.props} label="Login" />
-    );
-  }
-}
-
-const Logged = (props) => (
-  <IconMenu
-    {...props}
-    iconButtonElement={
-      <IconButton><MoreHorizIcon /></IconButton>
-    }
-    targetOrigin={{horizontal: 'right', vertical: 'top'}}
-    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
-  >
-    <MenuItem primaryText="Refresh" />
-    <MenuItem primaryText="Help" />
-    <MenuItem primaryText="Sign out" />
-  </IconMenu>
-);
-
-Logged.muiName = 'IconMenu';
+import FlatButton from 'material-ui/FlatButton';
 
 class Nav extends Component {
   constructor (props) {
@@ -69,10 +18,8 @@ class Nav extends Component {
   }
 
   _handleOpen () {
-    this.open = !this.open;
     this.props.dispatch(toggleLogin());
-    console.log(this.open);
-    console.log(this.props);
+    this.open = !this.open;
   };
 
   _handleClose () {
@@ -81,7 +28,8 @@ class Nav extends Component {
   };
 
   render () {
-        const actions = [
+
+    const loginActions = [
         <FlatButton
           label="Cancel"
           primary={true}
@@ -101,28 +49,22 @@ class Nav extends Component {
           style={{
           backgroundColor: '#2BC677'
         }}
-          iconElementLeft={ <Logged />}
-          iconElementRight={<Login onTouchTap={this._handleOpen} className='login'/>}
+          iconElementLeft={ <Menu />}
+          iconElementRight={<LoginButton onTouchTap={this._handleOpen} className='login'/>}
         />
          <Dialog 
           contentStyle={{ width: 300 }}
           title="Login"
-          actions={actions}
+          actions={loginActions}
           modal={false}
           open={this.open}
           onRequestClose={this._handleClose}
         >
-          <TextFieldExampleSimple/>
+          <LoginForm/>
         </Dialog>
       </div>
     )
   }
-}
-
-Nav.propTypes = {
-  loggedIn: React.PropTypes.bool,
-  currentlySending: React.PropTypes.bool,
-  dispatch: React.PropTypes.func
 }
 
 export default Nav
