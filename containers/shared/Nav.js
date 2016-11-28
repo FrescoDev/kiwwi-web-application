@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router';
-import {logout, clearError, toggleLogin} from '../../actions';
-import LoadingButton from '../../components/shared/LoadingButton';
-import LoginForm from '../../components/Navbar/LoginModal/LoginForm';
-import LoginButton from '../../components/Navbar/LoginButton';
-import Menu from '../../components/Navbar/Menu';
+import {toggleLogin} from '../../actions';
+import LoginForm from '../../components/navbar/login-modal/LoginForm';
+import LoginButton from '../../components/navbar/LoginButton';
+import Menu from '../../components/navbar/Menu';
 import AppBar from 'material-ui/AppBar';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
@@ -60,7 +58,7 @@ class Nav extends Component {
           open={this.open}
           onRequestClose={this._handleClose}
         >
-          <LoginForm/>
+        <LoginForm/>
         </Dialog>
       </div>
     )
