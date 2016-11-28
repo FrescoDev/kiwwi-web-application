@@ -2,10 +2,9 @@
 
 @charset 'UTF-8';
 
-/* 1. Vendors
-@import 'vendor/_normalize.css';
-*/
+/* 1. Vendors */
 
+@import 'vendor/_bootstrap.css';
 
 /* 2. Configuration and helpers */
 
