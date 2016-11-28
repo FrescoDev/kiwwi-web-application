@@ -6,13 +6,14 @@ import Menu from '../../components/navbar/Menu';
 import AppBar from 'material-ui/AppBar';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import {connect} from 'react-redux'
 
 class Nav extends Component {
   constructor (props) {
-    super(props)
+    super(props);
     this.open = false;
-    this._handleOpen = this._handleOpen.bind(this)
-    this._handleClose = this._handleClose.bind(this)
+    this._handleOpen = this._handleOpen.bind(this);
+    this._handleClose = this._handleClose.bind(this);
   }
 
   _handleOpen () {
@@ -55,7 +56,7 @@ class Nav extends Component {
           title="Login"
           actions={loginActions}
           modal={false}
-          open={this.open}
+          open={this.props.data.reducer.displayLoginPanel}
           onRequestClose={this._handleClose}
         >
         <LoginForm/>
@@ -64,5 +65,10 @@ class Nav extends Component {
     )
   }
 }
+function select (state) {
+  return {
+    data: state
+  }
+}
 
-export default Nav
+export default connect(select)(Nav)

@@ -39,7 +39,7 @@ function reducer(state = initialState, action) {
         case CLEAR_ERROR:
             return {...state, error: '' }
         case TOGGLE_LOGIN:
-            return {...state, displayLoginPanel: true }
+            return {...state, displayLoginPanel: !state.displayLoginPanel }
         default:
             return state
     }
@@ -47,7 +47,6 @@ function reducer(state = initialState, action) {
 
 const rootReducer = combineReducers({
     routing,
-    auth,
     reducer
 })
 
