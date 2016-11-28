@@ -4,8 +4,7 @@ var webpack = require('webpack')
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
     entry: [
-        'webpack-hot-middleware/client',
-        './index'
+        'webpack-hot-middleware/client', './index'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -13,13 +12,15 @@ module.exports = {
         publicPath: '/static/'
     },
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack
+            .optimize
+            .OccurenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
-    postcss: function() {
+    postcss: function () {
         return [
             require('postcss-import')({
-                onImport: function(files) {
+                onImport: function (files) {
                     files.forEach(this.addDependency)
                 }.bind(this)
             }),
@@ -28,20 +29,23 @@ module.exports = {
             require('autoprefixer')({
                 browsers: ['last 2 versions', 'IE > 8']
             }),
-            require('postcss-reporter')({
-                clearMessages: true
-            })
+            require('postcss-reporter')({clearMessages: true})
         ]
     },
     module: {
-        loaders: [{
-            test: /\.js$/,
-            loaders: ['babel'],
-            exclude: /node_modules/,
-            include: __dirname
-        }, {
-            test: /\.css$/, // Transform all .css files required somewhere within an entry point...
-            loaders: ['style-loader', 'css-loader', 'postcss-loader'] // ...with PostCSS
-        }]
+        loaders: [
+            {
+                test: /\.js$/,
+                loaders: ['babel'],
+                exclude: /node_modules/,
+                include: __dirname
+            }, {
+                test: /\.css$/, // Transform all .css files required somewhere within an entry point...
+                loaders: ['style-loader', 'css-loader', 'postcss-loader'] // ...with PostCSS
+            }, {
+                test: /\.(jpg|png)$/,
+                loader: 'url?limit=25000'
+            }
+        ]
     }
 }

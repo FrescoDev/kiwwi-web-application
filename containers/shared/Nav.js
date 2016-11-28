@@ -30,11 +30,19 @@ class Nav extends Component {
 
     const loginActions = [
         <FlatButton
+          hoverColor = {'lavenderblush'}
+          labelStyle={{
+          color: '#2BC677'
+          }}
           label="Cancel"
           primary={true}
           onTouchTap={this._handleClose}
         />,
         <FlatButton
+          hoverColor = {'lavenderblush'}        
+          labelStyle={{
+           color: '#2BC677'
+          }}
           label="Submit"
           primary={true}
           keyboardFocused={true}
@@ -52,6 +60,8 @@ class Nav extends Component {
           iconElementRight={<LoginButton onTouchTap={this._handleOpen} className='login'/>}
         />
          <Dialog 
+          titleStyle = {{ backgroundColor: '#FFB65D' }}
+          bodyStyle = {{ backgroundColor: '#FFB65D' }}
           contentStyle={{ width: 300 }}
           title="Login"
           actions={loginActions}

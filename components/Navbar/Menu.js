@@ -10,6 +10,9 @@ const Logged = (props) => (
     iconButtonElement={
       <IconButton><MoreHorizIcon /></IconButton>
     }
+    menuStyle={{
+          backgroundColor: '#FFCA89'
+        }}
     targetOrigin={{horizontal: 'right', vertical: 'top'}}
     anchorOrigin={{horizontal: 'right', vertical: 'top'}}
   >
