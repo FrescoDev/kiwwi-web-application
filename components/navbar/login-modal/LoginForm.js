@@ -13,8 +13,8 @@ const LoginForm = () => (
       floatingLabelFocusStyle ={{
           color: 'black'
         }}
-      hintText="Username"
-      floatingLabelText="Username"
+      hintText="your@email.com"
+      floatingLabelText="E-mail"
     /><br />
     <TextField
       underlineFocusStyle ={{

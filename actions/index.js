@@ -8,6 +8,7 @@ import {
     SET_AUTH,
     SENDING_REQUEST,
     LOGIN_REQUEST,
+    LOGIN_SUCCESS,
     REGISTER_REQUEST,
     LOGOUT,
     REQUEST_ERROR,
@@ -43,12 +44,23 @@ export function sendingRequest(sending) {
 
 /**
  * Tells the app we want to log in a user
- * @param  {object} data          The data we're sending for log in
- * @param  {string} data.username The username of the user to log in
- * @param  {string} data.password The password of the user to log in
+ * @param  {object} credentials          The data we're sending for log in
+ * @param  {string} credentials.username The username of the user to log in
+ * @param  {string} credentials.password The password of the user to log in
  */
-export function loginRequest(data) {
-    return { type: LOGIN_REQUEST, data }
+export function loginRequest(credentials) {
+    return { type: LOGIN_REQUEST, 
+             currentlySending: true, 
+             credentials }
+}
+
+export function loginSuccess(user) {
+  return {
+    type: LOGIN_SUCCESS,
+    currentlySending: false,
+    loggedin: true,
+    id_token: user.id_token
+  }
 }
 
 /**
