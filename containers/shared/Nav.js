@@ -62,7 +62,7 @@ class Nav extends Component {
           backgroundColor: '#2BC677'
         }}
           iconElementLeft={ <Menu />}
-          iconElementRight={<LoginButton onTouchTap={this.onLoginOpen} className='login'/>}
+          iconElementRight={ (!this.props.currentlySending) ? <LoginButton onTouchTap={this.onLoginOpen} className='login'/> : null }
         />
          <Dialog 
           titleStyle = {{ backgroundColor: '#FFB65D' }}
