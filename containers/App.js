@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Nav from './shared/Nav'
+import LinearProgress from 'material-ui/LinearProgress';
 
 class App extends Component {
   render () {
     return (
       <div>
+        {this.props.state.reducer.awaitingResponse ? <LinearProgress color= 'white' mode="indeterminate" style={{backgroundColor: 'black'}} /> : null } 
         <Nav loggedIn={this.props.state.reducer.loggedIn}
           currentlySending={this.props.state.reducer.awaitingResponse}
           history={this.props.history}
