@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {toggleLogin, loginRequest, authenticateUser } from '../../actions/home/index';
+import {toggleLogin, loginRequest, authenticateUser, logout } from '../../actions/home/index';
 import LoginForm from '../../components/navbar/login-modal/LoginForm';
 import LoginButton from '../../components/navbar/LoginButton';
+import LogoutButton from '../../components/navbar/LogoutButton';
 import Menu from '../../components/navbar/Menu';
 import AppBar from 'material-ui/AppBar';
 import Dialog from 'material-ui/Dialog';
@@ -15,6 +16,7 @@ class Nav extends Component {
     this.onLoginOpen = this.onLoginOpen.bind(this);
     this.onLoginClose = this.onLoginClose.bind(this);
     this.onLoginRequest = this.onLoginRequest.bind(this);
+    this.onLogoutRequest = this.onLogoutRequest.bind(this);
   }
 
   onLoginOpen () {
@@ -27,6 +29,10 @@ class Nav extends Component {
 
   onLoginRequest () {
     this.props.dispatch(authenticateUser(this.props.state.reducer.loginCredentials));
+  };
+
+  onLogoutRequest () {
+    this.props.dispatch(logout());
   };
 
   render () {
@@ -62,7 +68,7 @@ class Nav extends Component {
           backgroundColor: '#2BC677'
         }}
           iconElementLeft={ <Menu />}
-          iconElementRight={ (!this.props.currentlySending) ? <LoginButton onTouchTap={this.onLoginOpen} className='login'/> : null }
+          iconElementRight={ (!this.props.currentlySending && !this.props.loggedIn) ? <LoginButton onTouchTap={this.onLoginOpen} className='login'/> : <LogoutButton onTouchTap={this.onLogoutRequest} className='login'/> }
         />
          <Dialog 
           titleStyle = {{ backgroundColor: '#FFB65D' }}

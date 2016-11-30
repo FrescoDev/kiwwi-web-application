@@ -3,6 +3,7 @@ import { combineReducers } from 'redux'
 import {
     LOGIN_MODAL_TOGGLED,
     LOGIN_REQUEST_SUBMITTED,
+    LOGOUT_REQUEST_SUBMITTED,
     LOGIN_SUCCESS_RECIEVED,
     LOGIN_FAILURE_RECIEVED,
     CREDENTIALS_ENTERED
@@ -27,6 +28,8 @@ function reducer(state = initialState, action) {
             return {...state, loginCredentials: action.loginForm, loginFailure: false }
         case LOGIN_REQUEST_SUBMITTED:
             return {...state, awaitingResponse: true }
+        case LOGOUT_REQUEST_SUBMITTED:
+            return {...state, loggedIn: false }
         case LOGIN_FAILURE_RECIEVED:
             return {...state, loginFailure: true, awaitingResponse: false }
         case LOGIN_SUCCESS_RECIEVED:

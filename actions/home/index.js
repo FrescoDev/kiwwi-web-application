@@ -4,6 +4,7 @@ export const LOGIN_MODAL_TOGGLED = 'LOGIN_MODAL_TOGGLED'
 export const LOGIN_REQUEST_SUBMITTED = 'LOGIN_REQUEST_SUBMITTED'
 export const LOGIN_SUCCESS_RECIEVED = 'LOGIN_SUCCESS_RECIEVED'
 export const LOGIN_FAILURE_RECIEVED = 'LOGIN_FAILURE_RECIEVED'
+export const LOGOUT_REQUEST_SUBMITTED = 'LOGOUT_REQUEST_SUBMITTED'
 export const CREDENTIALS_ENTERED = 'CREDENTIALS_ENTERED'
 export const SENDING_REQUEST = 'SENDING_REQUEST'
 
@@ -60,4 +61,11 @@ export function authenticateUser(userCredentials) {
     return dispatch => {
         return dispatch(fetchUserAuthenticationStatus(userCredentials))
     }
+}
+
+/**
+ * Tells the app we want to log out a user
+ */
+export function logout() {
+    return { type: LOGOUT_REQUEST_SUBMITTED }
 }
