@@ -1,45 +1,38 @@
-/*
- * The reducer takes care of state changes in our app through actions
- */
 import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux'
 import {
-    CHANGE_FORM,
-    SET_AUTH,
-    SENDING_REQUEST,
-    REQUEST_ERROR,
-    CLEAR_ERROR,
-    TOGGLE_LOGIN
-} from '../actions/constants'
-import auth from '../utilities/authenticationHelpers'
+    LOGIN_MODAL_TOGGLED,
+    LOGIN_REQUEST_SUBMITTED,
+    LOGIN_SUCCESS_RECIEVED,
+    LOGIN_FAILURE_RECIEVED,
+    CREDENTIALS_ENTERED
+} from '../actions/home/index'
 
 // The initial application state
 let initialState = {
-    formState: {
+    loginCredentials: {
         username: '',
         password: ''
     },
-    error: '',
-    currentlySending: false,
-    displayLoginPanel: false,
-    loggedIn: auth.loggedIn()
+    loginPanelActive: false,
+    loginFailure: false,
+    awaitingResponse: false,
+    loggedIn: false
 }
 
 // Takes care of changing the application state
 function reducer(state = initialState, action) {
     switch (action.type) {
-        case CHANGE_FORM:
-            return {...state, formState: action.newFormState }
-        case SET_AUTH:
-            return {...state, loggedIn: action.newAuthState }
-        case SENDING_REQUEST:
-            return {...state, currentlySending: action.sending }
-        case REQUEST_ERROR:
-            return {...state, error: action.error }
-        case CLEAR_ERROR:
-            return {...state, error: '' }
-        case TOGGLE_LOGIN:
-            return {...state, displayLoginPanel: !state.displayLoginPanel }
+        case CREDENTIALS_ENTERED:
+            return {...state, loginCredentials: action.loginForm, loginFailure: false }
+        case LOGIN_REQUEST_SUBMITTED:
+            return {...state, currentlySending: true }
+        case LOGIN_FAILURE_RECIEVED:
+            return {...state, loginFailure: true, currentlySending: false }
+        case LOGIN_SUCCESS_RECIEVED:
+            return {...state, loggedIn: true, currentlySending: false, loginPanelActive: false  }
+        case LOGIN_MODAL_TOGGLED:
+            return {...state, loginPanelActive: !state.loginPanelActive }
         default:
             return state
     }

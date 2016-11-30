@@ -6,8 +6,8 @@ class App extends Component {
   render () {
     return (
       <div>
-        <Nav loggedIn={this.props.data.loggedIn}
-          currentlySending={this.props.data.currentlySending}
+        <Nav loggedIn={this.props.state.loggedIn}
+          currentlySending={this.props.state.awaitingResponse}
           history={this.props.history}
           dispatch={this.props.dispatch}
           location={this.props.location} />
@@ -18,7 +18,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  data: React.PropTypes.object,
+  state: React.PropTypes.object,
   history: React.PropTypes.object,
   location: React.PropTypes.object,
   children: React.PropTypes.object,
@@ -27,7 +27,7 @@ App.propTypes = {
 
 function select (state) {
   return {
-    data: state
+    state: state
   }
 }
 

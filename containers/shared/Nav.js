@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {toggleLogin} from '../../actions';
+import {toggleLogin, loginRequest, authenticateUser } from '../../actions/home/index';
 import LoginForm from '../../components/navbar/login-modal/LoginForm';
 import LoginButton from '../../components/navbar/LoginButton';
 import Menu from '../../components/navbar/Menu';
@@ -11,19 +11,21 @@ import {connect} from 'react-redux'
 class Nav extends Component {
   constructor (props) {
     super(props);
-    this.open = false;
-    this._handleOpen = this._handleOpen.bind(this);
-    this._handleClose = this._handleClose.bind(this);
+    this.onLoginOpen = this.onLoginOpen.bind(this);
+    this.onLoginClose = this.onLoginClose.bind(this);
+    this.onLoginRequest = this.onLoginRequest.bind(this);
   }
 
-  _handleOpen () {
+  onLoginOpen () {
     this.props.dispatch(toggleLogin());
-    this.open = !this.open;
   };
 
-  _handleClose () {
+  onLoginClose () {
     this.props.dispatch(toggleLogin());
-    this.open = !this.open;
+  };
+
+  onLoginRequest () {
+    this.props.dispatch(authenticateUser(this.props.state.reducer.loginCredentials));
   };
 
   render () {
@@ -36,7 +38,7 @@ class Nav extends Component {
           }}
           label="Cancel"
           primary={true}
-          onTouchTap={this._handleClose}
+          onTouchTap={this.onLoginClose}
         />,
         <FlatButton
           hoverColor = {'lavenderblush'}        
@@ -46,7 +48,7 @@ class Nav extends Component {
           label="Submit"
           primary={true}
           keyboardFocused={true}
-          onTouchTap={this._handleClose}
+          onTouchTap={this.onLoginRequest}
         />,
       ];
 
@@ -57,7 +59,7 @@ class Nav extends Component {
           backgroundColor: '#2BC677'
         }}
           iconElementLeft={ <Menu />}
-          iconElementRight={<LoginButton onTouchTap={this._handleOpen} className='login'/>}
+          iconElementRight={<LoginButton onTouchTap={this.onLoginOpen} className='login'/>}
         />
          <Dialog 
           titleStyle = {{ backgroundColor: '#FFB65D' }}
@@ -66,10 +68,10 @@ class Nav extends Component {
           title="Login"
           actions={loginActions}
           modal={false}
-          open={this.props.data.reducer.displayLoginPanel}
-          onRequestClose={this._handleClose}
+          open={this.props.state.reducer.loginPanelActive}
+          onRequestClose={this.onLoginClose}
         >
-        <LoginForm/>
+        <LoginForm />
         </Dialog>
       </div>
     )
@@ -77,7 +79,7 @@ class Nav extends Component {
 }
 function select (state) {
   return {
-    data: state
+    state: state
   }
 }
 

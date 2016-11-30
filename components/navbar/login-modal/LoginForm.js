@@ -1,37 +1,69 @@
-import React from 'react';
+import React, {Component} from 'react';
 import TextField from 'material-ui/TextField';
+import {connect} from 'react-redux'
+import { enterCredentials } from '../../../actions/home/index';
 
-const LoginForm = () => (
-  <div>
-    <TextField
-      underlineFocusStyle ={{
-        borderColor: 'white'
-        }}
-      underlineStyle ={{
-        borderColor: 'white'
-        }}
-      floatingLabelFocusStyle ={{
-          color: 'black'
-        }}
-      hintText="your@email.com"
-      floatingLabelText="E-mail"
-    /><br />
-    <TextField
-      underlineFocusStyle ={{
-        borderColor: 'white'
-        }}
-      underlineStyle ={{
-        borderColor: 'white'
-        }}
-      floatingLabelFocusStyle ={{
-          color: 'black'
-        }}
-      hintText="Password"
-      floatingLabelText="Password"
-      type="password"
-    />
-  </div>
-);
+class LoginForm extends Component {
+  constructor (props) {
+    super(props);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.emitChange = this.emitChange.bind(this);
+  }
 
-export default LoginForm;
+  onChangeEmail (event) {
+    this.emitChange({ email: event.target.value, password: this.props.state.reducer.loginCredentials.password})
+  }
 
+  onChangePassword (event) {
+    this.emitChange({ email: this.props.state.reducer.loginCredentials.email, password: event.target.value})
+  }
+
+  emitChange (loginForm) {
+    this.props.dispatch(enterCredentials(loginForm))
+  }
+
+  render() {
+    return(
+      <div>
+        <TextField
+          underlineFocusStyle ={{
+            borderColor: 'white'
+            }}
+          underlineStyle ={{
+            borderColor: 'white'
+            }}
+          floatingLabelFocusStyle ={{
+              color: 'black'
+            }}
+          hintText="your@email.com"
+          floatingLabelText="E-mail"
+          onChange={this.onChangeEmail}
+        /><br />
+        <TextField
+          underlineFocusStyle ={{
+            borderColor: 'white'
+            }}
+          underlineStyle ={{
+            borderColor: 'white'
+            }}
+          floatingLabelFocusStyle ={{
+              color: 'black'
+            }}
+          hintText="Password"
+          floatingLabelText="Password"
+          type="password"
+          onChange={this.onChangePassword}          
+        />
+      </div>
+    )
+  }
+}
+
+function select (state) {
+  return {
+    state: state
+  }
+}
+
+export default connect(select)(LoginForm)
