@@ -6,6 +6,7 @@ import Menu from '../../components/navbar/Menu';
 import AppBar from 'material-ui/AppBar';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import LinearProgress from 'material-ui/LinearProgress';
 import {connect} from 'react-redux'
 
 class Nav extends Component {
@@ -39,6 +40,7 @@ class Nav extends Component {
           label="Cancel"
           primary={true}
           onTouchTap={this.onLoginClose}
+          disabled={this.props.currentlySending}
         />,
         <FlatButton
           hoverColor = {'lavenderblush'}        
@@ -49,6 +51,7 @@ class Nav extends Component {
           primary={true}
           keyboardFocused={true}
           onTouchTap={this.onLoginRequest}
+          disabled={this.props.currentlySending}          
         />,
       ];
 
@@ -71,6 +74,7 @@ class Nav extends Component {
           open={this.props.state.reducer.loginPanelActive}
           onRequestClose={this.onLoginClose}
         >
+        {this.props.currentlySending ? <LinearProgress color= 'white' mode="indeterminate" style={{backgroundColor: 'black'}} /> : <LinearProgress color= 'black' mode="indeterminate" style={{backgroundColor: 'black'}} />} 
         <LoginForm />
         </Dialog>
       </div>

@@ -26,11 +26,11 @@ function reducer(state = initialState, action) {
         case CREDENTIALS_ENTERED:
             return {...state, loginCredentials: action.loginForm, loginFailure: false }
         case LOGIN_REQUEST_SUBMITTED:
-            return {...state, currentlySending: true }
+            return {...state, awaitingResponse: true }
         case LOGIN_FAILURE_RECIEVED:
-            return {...state, loginFailure: true, currentlySending: false }
+            return {...state, loginFailure: true, awaitingResponse: false }
         case LOGIN_SUCCESS_RECIEVED:
-            return {...state, loggedIn: true, currentlySending: false, loginPanelActive: false  }
+            return {...state, loggedIn: true, awaitingResponse: false, loginPanelActive: false  }
         case LOGIN_MODAL_TOGGLED:
             return {...state, loginPanelActive: !state.loginPanelActive }
         default:

@@ -8,8 +8,8 @@ export const CREDENTIALS_ENTERED = 'CREDENTIALS_ENTERED'
 export const SENDING_REQUEST = 'SENDING_REQUEST'
 
 /**
- * Sets the `currentlySending` state, which displays a loading indicator during requests
- * @param  {boolean} sending True means we're sending a request, false means we're not
+ * Sets the `awaitingResponse` state, which displays a loading indicator during requests
+ * @param  {boolean} awaitingResponse True means we're sending a request, false means we're not
  */
 export function sendingRequest(awaitingResponse) {
     return { type: SENDING_REQUEST, awaitingResponse }
@@ -45,7 +45,7 @@ export function fetchUserAuthenticationStatus(userCredentials) {
                 LOGIN_REQUEST_SUBMITTED, LOGIN_SUCCESS_RECIEVED, LOGIN_FAILURE_RECIEVED
             ],
             method: 'GET',
-            endpoint: `http://echo.jsontest.com/key/value/one/two`
+            endpoint: `http://www.fakeresponse.com/api/?sleep=3`
         }
     }
 }

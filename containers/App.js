@@ -6,8 +6,8 @@ class App extends Component {
   render () {
     return (
       <div>
-        <Nav loggedIn={this.props.state.loggedIn}
-          currentlySending={this.props.state.awaitingResponse}
+        <Nav loggedIn={this.props.state.reducer.loggedIn}
+          currentlySending={this.props.state.reducer.awaitingResponse}
           history={this.props.history}
           dispatch={this.props.dispatch}
           location={this.props.location} />
