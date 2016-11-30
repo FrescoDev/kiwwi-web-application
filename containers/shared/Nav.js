@@ -74,7 +74,7 @@ class Nav extends Component {
           open={this.props.state.reducer.loginPanelActive}
           onRequestClose={this.onLoginClose}
         >
-        {this.props.currentlySending ? <LinearProgress color= 'white' mode="indeterminate" style={{backgroundColor: 'black'}} /> : <LinearProgress color= 'black' mode="indeterminate" style={{backgroundColor: 'black'}} />} 
+        {this.props.currentlySending ? <LinearProgress color= '#24E583' mode="indeterminate" style={{backgroundColor: 'white'}} /> : <LinearProgress color= 'white' mode="indeterminate" style={{backgroundColor: 'white'}} />} 
         <LoginForm />
         </Dialog>
       </div>
