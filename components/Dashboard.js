@@ -1,7 +1,12 @@
 import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import FontIcon from 'material-ui/FontIcon';
-import ActionFlightTakeoff from 'material-ui/svg-icons/action/flight-takeoff';
+import Home from 'material-ui/svg-icons/action/home';
+import Consultation from 'material-ui/svg-icons/action/account-circle';
+import Food from 'material-ui/svg-icons/maps/restaurant';
+import Work from 'material-ui/svg-icons/places/fitness-center';
+import Settings from 'material-ui/svg-icons/action/settings';
+import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 
 const Dashboard = () => (
   <article>
@@ -13,23 +18,27 @@ const Dashboard = () => (
               <h1 className='plan-style'>:)</h1>
           </div>
        </div>        
-  <Tabs className='tabs'>
-    <Tab style={{
-          backgroundColor: '#2BC677'
+  <Tabs className='tabs' inkBarStyle={{backgroundColor: 'white'}}>
+    <Tab className='tab-select' style={{
+          backgroundColor: '#FFCA89'
         }} 
-        icon={<ActionFlightTakeoff />} />
-    <Tab style={{
-          backgroundColor: '#2BC677'
+        icon={<Home style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />} />
+    <Tab className='tab-select' style={{
+          backgroundColor: '#FCAF63'
         }}
-        icon={<ActionFlightTakeoff />} />
-    <Tab style={{
-          backgroundColor: '#2BC677'
+        icon={<Food style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />} />
+    <Tab className='tab-select' style={{
+          backgroundColor: '#FFCA89'
         }}
-        icon={<ActionFlightTakeoff />} />
-    <Tab style={{
-          backgroundColor: '#2BC677'
+        icon={<Consultation style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />} />
+    <Tab className='tab-select' style={{
+          backgroundColor: '#FCAF63'
         }}
-        icon={<ActionFlightTakeoff />} />
+        icon={<Work style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />} />
+    <Tab className='tab-select' style={{
+          backgroundColor: '#FFCA89'
+        }}
+        icon={<Settings style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />} />
   </Tabs>
   </article>
 );

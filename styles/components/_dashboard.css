@@ -1,0 +1,19 @@
+.tabs {
+    padding-top: 3%;
+    bottom: 0px;
+}
+
+.dash-display {
+    padding-top: 6%;
+}
+
+.tab-select {
+    animation-delay: 0;
+}
+
+.tab-select:hover {
+    opacity: 0.9;
+    -webkit-box-shadow: 0 6px 0px -0px white;
+    -moz-box-shadow: 0 6px 0px -0px white;
+    box-shadow: 0 6px 0px -0px white;
+}
