@@ -10,15 +10,7 @@ import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 
 const Dashboard = () => (
   <article>
-        <div className='container-fluid'>
-          <div className='main-display col-md-8'>
-              <h1><font color='#1B3628'>Welcome</font></h1>
-              <h1 className='plan-style'><font color='antiquewhite'>To</font> Your</h1>
-              <h1 className='plan-style'><font color='antiquewhite'>Dashboard</font></h1>
-              <h1 className='plan-style'>:)</h1>
-          </div>
-       </div>        
-  <Tabs className='tabs' inkBarStyle={{backgroundColor: 'white'}}>
+    <Tabs inkBarStyle={{backgroundColor: 'white'}}>
     <Tab className='tab-select' style={{
           backgroundColor: '#FFCA89'
         }} 
@@ -40,6 +32,14 @@ const Dashboard = () => (
         }}
         icon={<Settings style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />} />
   </Tabs>
+        <div className='container-fluid'>
+          <div className='main-display tabs col-md-8'>
+              <h1><font color='#1B3628'>Welcome</font></h1>
+              <h1 className='plan-style'><font color='antiquewhite'>To</font> Your</h1>
+              <h1 className='plan-style'><font color='antiquewhite'>Dashboard</font></h1>
+              <h1 className='plan-style'>:)</h1>
+          </div>
+       </div>        
   </article>
 );
 export default Dashboard
