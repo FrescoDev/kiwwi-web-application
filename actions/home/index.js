@@ -1,4 +1,5 @@
 import {CALL_API} from 'redux-api-middleware';
+import {push} from 'react-router-redux';
 
 export const LOGIN_MODAL_TOGGLED = 'LOGIN_MODAL_TOGGLED'
 export const LOGIN_REQUEST_SUBMITTED = 'LOGIN_REQUEST_SUBMITTED'
@@ -7,6 +8,7 @@ export const LOGIN_FAILURE_RECIEVED = 'LOGIN_FAILURE_RECIEVED'
 export const LOGOUT_REQUEST_SUBMITTED = 'LOGOUT_REQUEST_SUBMITTED'
 export const CREDENTIALS_ENTERED = 'CREDENTIALS_ENTERED'
 export const SENDING_REQUEST = 'SENDING_REQUEST'
+export const AUTH_SET = 'AUTH_SET'
 
 /**
  * Sets the `awaitingResponse` state, which displays a loading indicator during requests
@@ -49,6 +51,35 @@ export function fetchUserAuthenticationStatus(userCredentials) {
             endpoint: `http://www.fakeresponse.com/api/?sleep=3`
         }
     }
+}
+
+export function doStuff() {
+    return dispatch => {
+        dispatch({
+            [CALL_API]: {
+                types: [
+                    LOGIN_REQUEST_SUBMITTED,
+                    {
+                        type: LOGIN_SUCCESS_RECIEVED,
+                        payload: (action, state, res) => {
+                            dispatch(setAuth());
+                            //dispatch(push('/dashboard'));
+                        }
+                    },
+                    LOGIN_FAILURE_RECIEVED
+                ],
+                method: 'GET',
+                endpoint: `http://www.fakeresponse.com/api/?sleep=3`
+            }
+        })
+    }
+}
+
+/**
+ * Tells the app we want to authenticate user
+ */
+export function setAuth() {
+    return { type: AUTH_SET }
 }
 
 /**

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {toggleLogin, loginRequest, authenticateUser, logout } from '../../actions/home/index';
+import {toggleLogin, loginRequest, authenticateUser, logout, doStuff } from '../../actions/home/index';
 import LoginForm from '../../components/navbar/login-modal/LoginForm';
 import LoginButton from '../../components/navbar/LoginButton';
 import LogoutButton from '../../components/navbar/LogoutButton';
@@ -28,7 +28,7 @@ class Nav extends Component {
   };
 
   onLoginRequest () {
-    this.props.dispatch(authenticateUser(this.props.state.reducer.loginCredentials));
+    this.props.dispatch(doStuff());
   };
 
   onLogoutRequest () {

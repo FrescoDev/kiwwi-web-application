@@ -6,7 +6,8 @@ import {
     LOGOUT_REQUEST_SUBMITTED,
     LOGIN_SUCCESS_RECIEVED,
     LOGIN_FAILURE_RECIEVED,
-    CREDENTIALS_ENTERED
+    CREDENTIALS_ENTERED,
+    AUTH_SET
 } from '../actions/home/index'
 
 // The initial application state
@@ -26,6 +27,8 @@ function reducer(state = initialState, action) {
     switch (action.type) {
         case CREDENTIALS_ENTERED:
             return {...state, loginCredentials: action.loginForm, loginFailure: false }
+        case AUTH_SET:
+            return {...state, loggedIn: true }
         case LOGIN_REQUEST_SUBMITTED:
             return {...state, awaitingResponse: true }
         case LOGOUT_REQUEST_SUBMITTED:
