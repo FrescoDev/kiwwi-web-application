@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { toggleLogin, loginRequest, authenticateUser, logout, fetchUserAuthenticationStatus } from './actions/index';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import LoginForm from './login-modal/LoginFormContainer';
 import SubmitButton from './login-modal/SubmitButton';
 import CancelButton from './login-modal/CancelButton';
 import LoginButton from './LoginButton';
-import LogoutButton from './LogoutButton';
 import MenuIconLeft from './MenuIconLeft';
 import AppBar from 'material-ui/AppBar';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
 import LinearProgress from 'material-ui/LinearProgress';
 
 class NavBarContainer extends Component {
@@ -79,6 +77,7 @@ class NavBarContainer extends Component {
     )
   }
 }
+
 function select (state) {
   return {
     state: state

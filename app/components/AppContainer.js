@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NavBarContainer from './navbar/NavBarContainer'
-import DashBar from './dashbar/DashBar'
+import DashBarContainer from './dashbar/DashBarContainer'
 import WelcomePage from './home/WelcomePage'
 import Dashboard from './dashboard/Dashboard'
 import LoadingIndicator from './shared/LoadingIndicator';
@@ -15,7 +15,7 @@ class AppContainer extends Component {
       <div>
         { !loggedIn ? (awaitingResponse ? <LoadingIndicator/> : <LoadingPlaceholder/>) : null } 
         { loggedIn ? 
-          <DashBar 
+          <DashBarContainer 
             loggedIn={ loggedIn }
             awaitingResponse={ awaitingResponse }
             history={ history }

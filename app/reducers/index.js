@@ -8,6 +8,10 @@ import {
     CREDENTIALS_ENTERED,
 } from '../components/navbar/actions/index'
 
+import {
+    TAB_ACTIVATED,
+} from '../components/dashbar/actions/index'
+
 // The initial application state
 let initialState = {
     loginCredentials: {
@@ -18,7 +22,7 @@ let initialState = {
     loginFailure: false,
     awaitingResponse: false,
     loggedIn: false,
-    dashbarActiveTabIndex: 0
+    dashbarActiveTabIndex: '0'
 }
 
 // Takes care of changing the application state
@@ -34,6 +38,8 @@ function app(state = initialState, action) {
             return {...state, loggedIn: true, awaitingResponse: false, loginPanelActive: false, dashbarActiveTabIndex: 0}
         case LOGIN_MODAL_TOGGLED:
             return {...state, loginPanelActive: !state.loginPanelActive }
+        case TAB_ACTIVATED:
+            return {...state, dashbarActiveTabIndex: action.tabIndex }
         default:
             return state
     }
