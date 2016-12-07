@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import NavBarContainer from './navbar/NavBarContainer'
 import DashBarContainer from './dashbar/DashBarContainer'
 import WelcomePage from './home/WelcomePage'
-import Dashboard from './dashboard/Dashboard'
+import DashboardContainer from './dashboard/DashboardContainer'
 import LoadingIndicator from './shared/LoadingIndicator';
 import LoadingPlaceholder from './shared/LoadingPlaceholder';
 
@@ -30,7 +30,7 @@ class AppContainer extends Component {
             location={ location } 
           /> 
         }
-        { loggedIn ? <Dashboard/> : <WelcomePage/> }
+        { loggedIn ? <DashboardContainer/> : <WelcomePage/> }
       </div>
     )
   }

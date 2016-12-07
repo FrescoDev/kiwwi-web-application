@@ -32,21 +32,18 @@ render () {
             className='tab-select' 
             style= {{ backgroundColor: '#FFCA89' }} 
             icon= {<Home style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />} 
-            onActive={this.handleActiveHome}
         />
         <Tab 
             value ='1'            
             className='tab-select' 
             style={{ backgroundColor: '#FCAF63' }}
-            icon={<Food style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />}
-            onActive={this.handleActiveFood}             
+            icon={<Food style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />}           
         />
         <Tab 
             value ='2'            
             className='tab-select' 
             style={{ backgroundColor: '#FFCA89' }}
-            icon={<Consultation style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />}
-            onActive={this.handleActiveConsultation}             
+            icon={<Consultation style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />}           
         />
         <Tab 
             value ='3'            
@@ -59,8 +56,7 @@ render () {
             value ='4'            
             className='tab-select' 
             style={{ backgroundColor: '#FFCA89' }}
-            icon={<Settings style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />}
-            onActive={this.handleActiveSettings}            
+            icon={<Settings style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />}           
         />
     </Tabs>
     );

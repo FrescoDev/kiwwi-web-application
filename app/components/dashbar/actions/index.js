@@ -1,4 +1,4 @@
-export const TAB_ACTIVATED = 'HOME_TAB_ACTIVATED';
+export const TAB_ACTIVATED = 'TAB_ACTIVATED';
 
 /**
  * activates home tab
