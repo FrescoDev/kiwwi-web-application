@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Badge from 'material-ui/Badge';
 import { ativateTab } from './actions/index';
 import { connect } from 'react-redux';
 import { Tabs, Tab } from 'material-ui/Tabs';
@@ -43,8 +44,8 @@ render () {
             value ='2'            
             className='tab-select' 
             style={{ backgroundColor: '#FFCA89' }}
-            icon={<Consultation style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />}           
-        />
+            icon={<Badge className='main-logo' badgeStyle={{top: 12, right: 12, backgroundColor: '#D46A6A'}} badgeContent={1} primary={true}> <Consultation style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} /></Badge>}           
+        />     
         <Tab 
             value ='3'            
             className='tab-select' 
