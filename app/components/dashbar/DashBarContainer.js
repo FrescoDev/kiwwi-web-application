@@ -50,8 +50,7 @@ render () {
             value ='3'            
             className='tab-select' 
             style={{ backgroundColor: '#FCAF63' }}
-            icon={<Work style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />}
-            onActive={this.handleActiveWork}             
+            icon={<Work style={{fill: '#2BC677', color: '#2BC677'}} hoverColor={greenA200} />}          
         />
         <Tab 
             value ='4'            

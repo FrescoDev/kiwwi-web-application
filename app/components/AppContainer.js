@@ -22,7 +22,7 @@ class AppContainer extends Component {
             dispatch={ dispatch }
             location={ location } 
           /> :
-          <NavBarContainer 
+          <NavBarContainer
             loggedIn={ loggedIn }
             awaitingResponse={ awaitingResponse }
             history={ history }
