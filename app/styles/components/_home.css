@@ -3,6 +3,11 @@
     padding-left: 19%;
 }
 
+.first-how-display {
+    font-size: 44px;
+    text-align: center;
+}
+
 .welcome {
     padding-bottom: 5%;
 }
@@ -43,6 +48,10 @@
 
 .plan-style {
     line-height: 60%;
+}
+
+.first-how-style {
+    padding-top: 4%;
 }
 
 @keyframes bounce {

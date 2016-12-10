@@ -38,7 +38,7 @@ class WelcomePage extends Component {
       
       <article>
         <div className='container-fluid welcome'>
-          <div className='main-display col-md-8'>
+          <div className='main-display col-md-8 fade-in'>
               <h1><font color='#1B3628'>Kiwwi*</font></h1>
               <h1 className='plan-style'><font color='antiquewhite'>PLAN</font> WELL.</h1>
               <h1 className='plan-style'><font color='antiquewhite'>EAT</font> WELL.</h1>
@@ -54,12 +54,12 @@ class WelcomePage extends Component {
        </div>
 
        <div className='container-fluid first-how-panel'>
-          <div className='main-display col-md-8'>
-              <h1><font color='#1B3628'>Kiwwi*</font></h1>
-              <h1 className='plan-style'><font color='antiquewhite'>PLAN</font> WELL.</h1>
-              <h1 className='plan-style'><font color='antiquewhite'>EAT</font> WELL.</h1>
-              <h1 className='plan-style'><font color='antiquewhite'>BE </font>WELL.</h1>
-              <h1>Repeat.</h1>
+          <div className='first-how-display wow animated bounceInDown'>
+              <h1><font color='#1B3628'>Getting Started</font></h1>
+              <h1 id="first-how" className='first-how-style wow animated fadeInLeft'><font color='antiquewhite'>Step 1.</font> Tell us about you.</h1>
+              <h1 id="first-how" className='first-how-style wow animated fadeInLeft'> Age: <font color='antiquewhite'>24</font></h1>
+              <h1 id="first-how" className='first-how-style wow animated fadeInLeft'>Fitness Level: <font color='antiquewhite'>Med</font></h1>
+              <h1 id="first-how" className='first-how-style wow animated fadeInLeft'>Goal: <font color='antiquewhite'>Stay in shape</font></h1>
           </div>
         </div>        
       </article>

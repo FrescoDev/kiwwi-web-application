@@ -54,7 +54,7 @@ export default class Root extends Component {
             <Route path='*' component={NotFound} />
           </Route> 
          </Router>
-         <DevTools />
+         {!<DevTools />}
         </div>
         </MuiThemeProvider>
       </Provider>

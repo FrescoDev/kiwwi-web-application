@@ -5,10 +5,11 @@
 /* 1. Vendors */
 
 @import 'vendor/_bootstrap.css';
+@import 'vendor/_animate.css';
 
 /* 2. Configuration and helpers */
 
-@import 'utils/_variables.css';
+@import 'utils/_fadein.css';
 
 /* 3. Base stuff */
 
