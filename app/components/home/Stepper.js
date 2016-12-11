@@ -6,6 +6,10 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import Body from 'material-ui/svg-icons/action/accessibility';
+import Target from 'material-ui/svg-icons/action/track-changes';
+import Work from 'material-ui/svg-icons/places/fitness-center';
+
 
 /**
  * Non-linear steppers allow users to enter a multi-step flow at any point.
@@ -42,21 +46,21 @@ class HorizontalNonLinearStepper extends React.Component {
     const contentStyle = {margin: '0 16px', color: 'white', fontWeight:'bold'};
 
     return (
-      <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
+      <div style={{width: '100%', maxWidth: 900, margin: 'auto', paddingBottom: '8%'}}>
         <Stepper linear={false} activeStep={stepIndex} style={{fill:'#1B3628'}}>
           <Step>
             <StepButton onClick={() => this.setState({stepIndex: 0})}>
-              Body Metrics
+              <font size="5">Body Metrics &nbsp;</font><Body/>
             </StepButton>
           </Step>
           <Step>
             <StepButton onClick={() => this.setState({stepIndex: 1})}>
-              Health and Fitness Assessment
+              <font size="5">Health and Fitness Assessment &nbsp;</font><Work/>
             </StepButton>
           </Step>
           <Step>
             <StepButton onClick={() => this.setState({stepIndex: 2})}>
-              Your Goals and Targets
+             <font size="5"> Your Goals and Targets &nbsp;</font><Target/>
             </StepButton>
           </Step>
         </Stepper>
