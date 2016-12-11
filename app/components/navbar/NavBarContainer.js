@@ -50,7 +50,7 @@ class NavBarContainer extends Component {
           onLoginRequest={this.onLoginRequest}
           awaitingResponse={this.props.awaitingResponse}          
         />
-];
+    ];
 
     return (
       <div>

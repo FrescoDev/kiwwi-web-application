@@ -1,6 +1,7 @@
 import 'babel-polyfill'
 
 import React, { Component, PropTypes } from 'react'
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { Provider } from 'react-redux'
 import { Router } from 'react-router'
 import { Route } from 'react-router'
@@ -40,10 +41,18 @@ function checkAuth(nextState, replace) {
 
 export default class Root extends Component {
   render() {
+    const muiTheme = getMuiTheme({
+        palette: {
+            primary1Color: '#2BC677',
+            primary2Color: '#2BC677'
+        }
+    });
+
     const { store, history } = this.props
+
     return (
       <Provider store={store}>
-      <MuiThemeProvider>
+      <MuiThemeProvider muiTheme={muiTheme}>
         <div>
           <Router history={history}>
             <Route component={AppContainer}>

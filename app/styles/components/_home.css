@@ -8,8 +8,9 @@
     text-align: center;
 }
 
-.welcome {
-    padding-bottom: 5%;
+.prompt {
+    position: relative;
+    padding-bottom: 2%;
 }
 
 .main-prompt-text {
@@ -19,7 +20,9 @@
 }
 
 .main-logo {
+    text-align: center;
     padding-top: 13%;
+    padding-bottom: 4%;
 }
 
 .first-how-panel {
@@ -27,8 +30,7 @@
     background-color: sandybrown;
 }
 
-
-/*.main-logo:hover {
+.main-logo {
     padding-top: 13%;
     animation-name: stretch;
     animation-duration: 1.3s;
@@ -38,7 +40,7 @@
     animation-iteration-count: infinite;
     animation-fill-mode: none;
     animation-play-state: running;
-}*/
+}
 
 @keyframes stretch {
     100% {
@@ -71,7 +73,6 @@
 }
 
 .arrow {
-    position: fixed;
     bottom: 1;
     left: 50%;
     margin-left: -20px;
