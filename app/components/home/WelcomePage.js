@@ -9,7 +9,7 @@ import HorizontalNonLinearStepper from './Stepper';
 import Chips from './Chips';
 
 const logoUrl = require('../../assets/img/logo.png');
-const foodUrl = require('../../assets/img/food_generic.png');
+const plateUrl = require('../../assets/img/plate_nobg.png');
 
 const style = {
   height: 100,
@@ -30,18 +30,18 @@ class WelcomePage extends Component {
   }
 
   handleScroll(event) {
-      let arrow = document.getElementById("arrow");
-      var opacity = 1;  // initial opacity
-      var timer = setInterval(function () {
-          if (opacity <= 0.1) {
-              clearInterval(timer);
-              arrow.style.display = 'none';
-          }
+      // let arrow = document.getElementById("arrow");
+      // var opacity = 1;  // initial opacity
+      // var timer = setInterval(function () {
+      //     if (opacity <= 0.1) {
+      //         clearInterval(timer);
+      //         arrow.style.display = 'none';
+      //     }
           
-          arrow.style.opacity = opacity;
-          arrow.style.filter = 'alpha(opacity=' + opacity * 100 + ")";
-          opacity -= opacity * 0.1;
-      }, 25);
+      //     arrow.style.opacity = opacity;
+      //     arrow.style.filter = 'alpha(opacity=' + opacity * 100 + ")";
+      //     opacity -= opacity * 0.1;
+      // }, 25);
   }
 
   render () {
@@ -67,8 +67,7 @@ class WelcomePage extends Component {
             <img src={logoUrl} />
           </div>
        </div>
-       <div id='arrow'className='prompt arrow bounce'>
-       </div> 
+       { !<div id='arrow'className='prompt arrow bounce'/> }
 
        <div className='container-fluid first-how-panel'>
           <div className='first-how-display wow animated bounceInDown'>
@@ -88,6 +87,9 @@ class WelcomePage extends Component {
           </div>
           <div className='wow animated fadeInRight'>
             <Chips/>
+          </div>
+          <div className='plate-logo'>
+            <img className='plate animated bounceInUp' src={plateUrl} />
           </div>
        </div>
 

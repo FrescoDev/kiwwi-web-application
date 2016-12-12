@@ -29,9 +29,18 @@
     padding-right: 15%;
 }
 
+.plate {
+    width: 600px;
+}
+
 .main-logo {
     text-align: center;
     padding-top: 13%;
+    padding-bottom: 4%;
+}
+
+.plate-logo {
+    text-align: center;
     padding-bottom: 4%;
 }
 
