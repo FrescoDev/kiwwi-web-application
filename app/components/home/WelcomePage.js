@@ -3,9 +3,13 @@ import Arrow from 'material-ui/svg-icons/navigation/expand-more';
 import Play from 'material-ui/svg-icons/av/play-circle-outline';
 import Profile from 'material-ui/svg-icons/social/person-outline';
 import Paper from 'material-ui/Paper';
+import Food from 'material-ui/svg-icons/maps/restaurant';
+import Health from 'material-ui/svg-icons/maps/local-hospital';
 import HorizontalNonLinearStepper from './Stepper';
+import Chips from './Chips';
 
 const logoUrl = require('../../assets/img/logo.png');
+const foodUrl = require('../../assets/img/food_generic.png');
 
 const style = {
   height: 100,
@@ -76,7 +80,23 @@ class WelcomePage extends Component {
                   </div>
                 </div>
           </div>
-        </div>        
+        </div>
+
+        <div className='container-fluid welcome'>
+          <div className='second-how-display col-md-8 fade-in'>
+              <h1 id="second-how" className='first-how-style wow animated fadeInLeft'><font color='antiquewhite'>Step 2.</font> Tell us about your food <Food style={{width: '110px', height: '95px', color: 'white'}}/></h1>
+          </div>
+          <div className='wow animated fadeInRight'>
+            <Chips/>
+          </div>
+       </div>
+
+        <div className='container-fluid third-how-panel'>
+          <div className='third-how-display col-md-8'>
+              <h1 id="third-how" className='first-how-style wow animated fadeInLeft'><font color='antiquewhite'>Step 3.</font> Select a health plan <Health style={{width: '110px', height: '95px', color: 'white'}}/></h1>
+          </div>
+        </div>
+
       </article>
     )
   }

@@ -3,6 +3,16 @@
     padding-left: 19%;
 }
 
+.third-how-display {
+    font-size: 44px;
+    padding-left: 13%;
+}
+
+.second-how-display {
+    font-size: 44px;
+    padding-left: 13%;
+}
+
 .first-how-display {
     font-size: 44px;
     text-align: center;
@@ -27,6 +37,12 @@
 
 .first-how-panel {
     padding-top: 4%;
+    background-color: sandybrown;
+}
+
+.third-how-panel {
+    padding-top: 4%;
+    padding-left: 4%;
     background-color: sandybrown;
 }
 
