@@ -36,7 +36,7 @@ export function fetchUserAuthenticationStatus(userCredentials) {
                 LOGIN_REQUEST_SUBMITTED, LOGIN_SUCCESS_RECIEVED, LOGIN_FAILURE_RECIEVED
             ],
             method: 'GET',
-            endpoint: `http://www.fakeresponse.com/api/?sleep=3`
+            endpoint: `http://localhost:7000/user/1`
         }
     }
 }
