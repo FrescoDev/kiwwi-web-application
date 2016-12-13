@@ -43,7 +43,7 @@ class HorizontalNonLinearStepper extends React.Component {
 
   render() {
     const {stepIndex} = this.state;
-    const contentStyle = {margin: '0 16px', color: 'black', fontWeight:'bold', fontSize: '24'};
+    const contentStyle = {margin: '0 16px', color: 'black', fontWeight:'bold', fontSize: '24px'};
 
     return (
       <div style={{width: '100%', maxWidth: 900, margin: 'auto', paddingBottom: '1%'}}>

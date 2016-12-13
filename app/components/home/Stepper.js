@@ -31,7 +31,7 @@ class HorizontalNonLinearStepper extends React.Component {
   getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
-        return (<p><font color='#1B3628'>Kiwwi*</font> uses your body <font color='black'> metrics </font></p>)
+        return (<p><font color='#1B3628'>Kiwwi*</font> uses your <font color='black'> metrics </font></p>)
       case 1:
         return (<p>As well as <font color='black'>your</font> current level of <font color='black'>fitness</font></p>)
       case 2:
