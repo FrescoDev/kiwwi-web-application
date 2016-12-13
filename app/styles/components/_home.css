@@ -49,10 +49,19 @@
     background-color: sandybrown;
 }
 
+.contact-icons {
+    text-align: center;
+    padding: 20%
+}
+
 .third-how-panel {
     padding-top: 4%;
     padding-left: 4%;
     background-color: sandybrown;
+}
+
+.fourth-how-panel {
+    padding-top: 6%;
 }
 
 .main-logo {

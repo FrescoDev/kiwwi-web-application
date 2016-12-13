@@ -31,11 +31,11 @@ class HorizontalNonLinearStepper extends React.Component {
   getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
-        return 'Kiwwi* uses metrics such as age, B.M.I., weight, height, etc...';
+        return (<p><font color='#1B3628'>Kiwwi*</font> uses your body <font color='black'> metrics </font></p>)
       case 1:
-        return 'As well as your current level of fitness';
+        return (<p>As well as <font color='black'>your</font> current level of <font color='black'>fitness</font></p>)
       case 2:
-        return 'Then uses this information to provide you with an optimal set of excercise and diet plans.';
+        return (<p>Then uses this <font color='black'>information</font> to provide you with an <font color='black'>optimal</font> set of excercise and diet plans.</p>)
       default:
         return 'Kiwwi makes it all simpler.';
     }
@@ -65,7 +65,7 @@ class HorizontalNonLinearStepper extends React.Component {
           </Step>
         </Stepper>
         <div style={contentStyle}>
-          <p>{this.getStepContent(stepIndex)}</p>
+          {this.getStepContent(stepIndex)}
           <div style={{marginTop: 12}}>
           </div>
         </div>
