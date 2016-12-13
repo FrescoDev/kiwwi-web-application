@@ -33,6 +33,16 @@
     width: 600px;
 }
 
+.badges {
+    width: 127px;
+}
+
+.badges-content {
+    text-align: center;
+    padding-bottom: 6%;
+    padding-top: 25%;
+}
+
 .main-logo {
     text-align: center;
     padding-top: 13%;

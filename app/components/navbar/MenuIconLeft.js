@@ -13,9 +13,10 @@ const MenuIconLeft = (props) => (
     targetOrigin={{horizontal: 'right', vertical: 'top'}}
     anchorOrigin={{horizontal: 'right', vertical: 'top'}}
   >
-  <Scrollchor to="#first-how"><MenuItem primaryText="Getting Started" /></Scrollchor>
+  <Scrollchor to="#Getting-Started"><MenuItem primaryText="Getting Started" /></Scrollchor>
   <MenuItem primaryText="Register" />
-  <Scrollchor to="#contact-us"><MenuItem primaryText="Contact Us" /></Scrollchor>
+  <Scrollchor to="#Contact-Us"><MenuItem primaryText="Contact Us" /></Scrollchor>
+  <Scrollchor to="#Contact-Us"><MenuItem primaryText="Download" /></Scrollchor>
   </IconMenu>
 );
 

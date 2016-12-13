@@ -13,6 +13,7 @@ import Chips from './Chips';
 const logoUrl = require('../../assets/img/logo.png');
 const plateUrl = require('../../assets/img/plate_nobg.png');
 const screensUrl = require('../../assets/img/screenshots.png');
+const badgesUrl = require('../../assets/img/badges.png');
 
 const style = {
   height: 100,
@@ -74,7 +75,7 @@ class WelcomePage extends Component {
 
        <div className='container-fluid first-how-panel'>
           <div className='first-how-display wow animated bounceInDown'>
-              <h1 id="first-how" ><font color='#1B3628'>Getting Started</font> <Play style={{width: '60px', height: '60px'}}/></h1>
+              <h1 id="Getting-Started" ><font color='#1B3628'>Getting Started</font> <Play style={{width: '60px', height: '60px'}}/></h1>
               <h1 className='first-how-style wow animated fadeInLeft'><font color='antiquewhite'>Step 1.</font> Tell us about you <Profile style={{width: '110px', height: '95px', color: 'white'}}/></h1>
                 <div className='row'>
                   <div className='first-how-style wow animated fadeInLeft'>
@@ -109,7 +110,7 @@ class WelcomePage extends Component {
         </div>
 
         <div className="container-fluid main-display welcome col-md-6">
-          <h1 id="contact-us" ><font color='#1B3628'>Contact Us</font> <Message style={{width: '60px', height: '60px'}}/></h1>
+          <h1 id="Contact-Us" ><font color='#1B3628'>Contact Us</font> <Message style={{width: '60px', height: '60px'}}/></h1>
         </div>
         <div className="col-md-6">        
           <div className="contact-icons">
@@ -127,6 +128,9 @@ class WelcomePage extends Component {
               </a>
           </div>
        </div>
+       <div className="badges-content">
+            <img className='badges animated wow fadeInDown' src={badgesUrl} />
+      </div>
 
       </article>
     )
