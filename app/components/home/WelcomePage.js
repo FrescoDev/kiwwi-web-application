@@ -74,7 +74,7 @@ class WelcomePage extends Component {
        <div id='arrow'className='prompt arrow bounce'/>
 
        <div className='container-fluid first-how-panel'>
-          <div className='first-how-display wow animated bounceInDown'>
+          <div className='first-how-display wow animated fadeInDown'>
               <h1 id="Getting-Started" ><font color='#1B3628'>Getting Started</font> <Play style={{width: '60px', height: '60px'}}/></h1>
               <h1 className='first-how-style wow animated fadeInLeft'><font color='antiquewhite'>Step 1.</font> Tell us about you <Profile style={{width: '110px', height: '95px', color: 'white'}}/></h1>
                 <div className='row'>
