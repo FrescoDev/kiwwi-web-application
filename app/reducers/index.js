@@ -10,6 +10,8 @@ import {
 
 import {
     TAB_ACTIVATED,
+    SETTINGS_DRAWER_TOGGLED,
+    LOGOUT_REQUEST_SUBMITTED
 } from '../components/dashbar/actions/index'
 
 // The initial application state
@@ -20,6 +22,7 @@ let initialState = {
     },
     user : null,
     loginPanelActive: false,
+    settingsDrawerActive: false,
     loginFailure: false,
     loggedIn: false,
     awaitingResponse: false,
@@ -33,12 +36,16 @@ function app(state = initialState, action) {
             return {...state, loginCredentials: action.loginForm, loginFailure: false }
         case LOGIN_REQUEST_SUBMITTED:
             return {...state, awaitingResponse: true, loginFailure: false }
+        case LOGOUT_REQUEST_SUBMITTED:
+            return {...state, loggedIn: false, settingsDrawerActive :false }
         case LOGIN_FAILURE_RECIEVED:
             return {...state, loginFailure: true, awaitingResponse: false }
         case LOGIN_SUCCESS_RECIEVED:
             return {...state, loggedIn: true, awaitingResponse: false, loginPanelActive: false, dashbarActiveTabIndex: 0, user: action.payload}
         case LOGIN_MODAL_TOGGLED:
             return {...state, loginPanelActive: !state.loginPanelActive }
+        case SETTINGS_DRAWER_TOGGLED:
+            return {...state, settingsDrawerActive: !state.settingsDrawerActive }
         case TAB_ACTIVATED:
             return {...state, dashbarActiveTabIndex: action.tabIndex }
         default:

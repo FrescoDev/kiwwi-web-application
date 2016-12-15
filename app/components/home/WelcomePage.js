@@ -9,8 +9,6 @@ import Health from 'material-ui/svg-icons/maps/local-hospital';
 import HorizontalNonLinearStepper from './Stepper';
 import Rule from './Divider';
 import Chips from './Chips';
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem'
 
 const logoUrl = require('../../assets/img/logo.png');
 const plateUrl = require('../../assets/img/plate_nobg.png');
