@@ -35,7 +35,7 @@ export default class ChipExampleArray extends React.Component {
 
   handleRequestDelete (key) {
     if (key === 3) {
-      alert('Why would you want to delete React?! :)');
+      //alert('Why would you want to delete React?! :)');
       return;
     }
 
