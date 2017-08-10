@@ -29,7 +29,7 @@ module.exports = {
             require('autoprefixer')({
                 browsers: ['last 2 versions', 'IE > 8']
             }),
-            require('postcss-reporter')({clearMessages: true})
+            require('postcss-reporter')({ clearMessages: true })
         ]
     },
     module: {
@@ -42,10 +42,8 @@ module.exports = {
             }, {
                 test: /\.css$/, // Transform all .css files required somewhere within an entry point...
                 loaders: ['style-loader', 'css-loader', 'postcss-loader'] // ...with PostCSS
-            }, {
-                test: /\.(jpg|png)$/,
-                loader: 'url?limit=25000'
-            }
+            }, { test: /\.png$/, loader: "url-loader?limit=100000000" },
+            { test: /\.jpg$/, loader: "url-loader?limit=100000000" }
         ]
     }
 }
